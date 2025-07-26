@@ -1,0 +1,155 @@
+{
+  "_comment": "This is a template package.json for Real Estate CRM Node.js application",
+  "_security_warning": "Remove this file after copying to package.json. Never commit sensitive data!",
+  "_permissions_note": "Set file permissions to 644 for package.json in production",
+  
+  "name": "real-estate-crm",
+  "version": "1.0.0",
+  "description": "A comprehensive Real Estate CRM system for managing leads, properties, and transactions",
+  "main": "server.js",
+  "private": true,
+  
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss src/css/app.css -o public/css/app.css",
+    "build:js": "webpack --mode=production",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/ --ext .js,.jsx",
+    "lint:fix": "eslint src/ --ext .js,.jsx --fix",
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "security:audit": "npm audit",
+    "security:fix": "npm audit fix",
+    "docs": "jsdoc src/ -d docs/",
+    "health-check": "node scripts/health-check.js"
+  },
+  
+  "dependencies": {
+    "_comment_framework": "Core web framework and middleware",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    
+    "_comment_auth": "Authentication and security",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "express-session": "^1.17.3",
+    "express-rate-limit": "^6.7.0",
+    "express-validator": "^7.0.1",
+    
+    "_comment_database": "Database connectivity and ORM",
+    "mysql2": "^3.6.0",
+    "knex": "^2.5.1",
+    "objection": "^3.1.1",
+    "redis": "^4.6.7",
+    
+    "_comment_utilities": "Core utilities and helpers",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0",
+    "dotenv": "^16.3.1",
+    "config": "^3.3.9",
+    
+    "_comment_file_handling": "File upload and processing",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.1",
+    "csv-parser": "^3.0.0",
+    "xlsx": "^0.18.5",
+    
+    "_comment_email": "Email services",
+    "nodemailer": "^6.9.3",
+    "handlebars": "^4.7.7",
+    
+    "_comment_real_estate": "Real estate specific integrations",
+    "axios": "^1.4.0",
+    "xml2js": "^0.6.2",
+    
+    "_comment_payments": "Payment processing",
+    "stripe": "^12.9.0",
+    
+    "_comment_validation": "Data validation and sanitization",
+    "joi": "^17.9.2",
+    "sanitize-html": "^2.11.0",
+    
+    "_comment_monitoring": "Health checks and monitoring",
+    "prom-client": "^14.2.0",
+    "winston": "^3.10.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  
+  "devDependencies": {
+    "_comment_testing": "Testing framework and utilities",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3",
+    "jest-environment-node": "^29.5.0",
+    
+    "_comment_linting": "Code quality and formatting",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^2.8.8",
+    
+    "_comment_build": "Build tools and bundling",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2",
+    
+    "_comment_development": "Development utilities",
+    "nodemon": "^2.0.22",
+    "jsdoc": "^4.0.2",
+    "cross-env": "^7.0.3"
+  },
+  
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  
+  "keywords": [
+    "real-estate",
+    "crm",
+    "property-management",
+    "lead-management",
+    "sales",
+    "nodejs",
+    "express"
+  ],
+  
+  "author": {
+    "name": "Your Company Name",
+    "email": "contact@yourcompany.com"
+  },
+  
+  "license": "UNLICENSED",
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/real-estate-crm.git"
+  },
+  
+  "bugs": {
+    "url": "https://github.com/your-username/real-estate-crm/issues"
+  },
+  
+  "homepage": "https://github.com/your-username/real-estate-crm#readme",
+  
+  "_deployment_notes": {
+    "production_install": "npm ci --only=production",
+    "security": "Run 'npm audit' regularly to check for vulnerabilities",
+    "node_version": "Use Node.js LTS version for production deployments",
+    "environment": "Set NODE_ENV=production for optimized performance",
+    "monitoring": "Enable health checks and monitoring in production",
+    "file_permissions": "Set appropriate file permissions for security"
+  }
+}
